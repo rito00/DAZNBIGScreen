@@ -1,0 +1,36 @@
+{
+"update_url": "https://clients2.google.com/service/update2/crx",
+
+    "manifest_version": 3,
+    "name": "DAZN BIGScreen",
+    "version": "1.0.0",
+    "description": "DAZN BIGScreen",
+    "author": "rito00",
+    "permissions": [
+        "tabs",
+        "storage"
+    ],
+    "background": {
+        "service_worker": "background.js"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "https://www.dazn.com/*"
+            ],
+            "js": [
+                "script.js"
+            ]
+        }
+    ],
+    "icons": {
+    },
+    "action": {
+        "default_popup": "popup.html",
+        "default_icon": {
+        }
+    },
+    "content_security_policy": {
+        "extension_pages": "script-src 'self'; object-src 'self'; style-src 'self' 'unsafe-inline';"
+    }
+}
